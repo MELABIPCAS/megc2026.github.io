@@ -11,6 +11,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
     <link href="assets/css/main.css" rel="stylesheet" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body class="is-preload">
@@ -29,7 +31,7 @@
         <nav id="nav">
             <ul>
                 <!-------------BEGIN SIDE MENU--------------->
-                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <!-- Workshop MENU-->
                 <li><a href="workshop.html">FME Workshop</a>
                     <ul>
@@ -38,7 +40,7 @@
                     </ul>
                 </li>
                 <!-- Challenge MENU -->
-                <li><a href="challenge.html">MEGC</a>
+                <li class="current"><a href="challenge.html">MEGC</a>
                     <ul>
                         <li><a href="challenge.html#news">News</a></li>
                         <li><a href="challenge.html#dates">Important Dates</a></li>
@@ -56,8 +58,24 @@
             <div class="container">
 
                 <!-- Pre-amble section -->
-                <section>
-                    Information on this year's Grand Challenge competition will be available soon.
+               <section>
+                    <header class="main">
+                        <h2>Micro-Expression Grand Challenge (MEGC) 2026</h2>
+                    </header>
+                   <p>
+                    Facial micro-expressions (MEs) are spontaneous, fleeting facial movements (less than 500ms) that reveal suppressed emotions, making them critical for high-stakes analysis but notoriously difficult to detect due to data scarcity and annotation challenges. MEGC 2026 aims to bridge this gap by leveraging the emerging capabilities of <strong>Vision-Language Models (VLMs)</strong> and <strong>Multimodal Large Language Models (LLMs)</strong>. While these models excel in general reasoning, their ability to interpret the subtle, fine-grained cues of micro-expressions remains an open research question that this competition seeks to answer through novel benchmarking tasks.
+                </p>
+                <p>
+                    By introducing <strong>Micro-Expression Short-Video (ME-VQA)</strong> and the pioneering <strong>Long-Video Question Answering (ME-LVQA)</strong> tracks, the competition pushes boundaries from simple recognition to interpretable natural language understanding. Advancing this technology will have transformative impacts across <strong>healthcare</strong> (for mental state assessment), <strong>human–machine interaction</strong> (creating empathetic systems), and <strong>security</strong> (enhancing risk assessment), ultimately deepening our scientific understanding of nonverbal human communication.
+                </p>
+                    <p>
+                        In detail, MEGC 2026 introduces:
+                    </p>
+                    <ul>
+                        <li><strong>Task 1 - ME-VQA:</strong> a continuation of the ME-VQA task (MEGC 2025) for benchmarking short-clip subtle-emotion reasoning.</li>
+                        <li><strong>Task 2 - ME-LVQA:</strong> a new ME-LVQA task <em>Micro-Expression Long-Video Question Answering</em>, requiring reasoning and description across long videos.</li>
+                    </ul>
+
                 </section>
 
                 <!-- News Section -->
@@ -71,471 +89,304 @@
 
                 <!-- Important Dates Section -->
                 <section>
-                    <a name="dates"></a>
-                    <h2 class="major"><span>Important Dates</span></h2>
-                    Coming soon.
+                <a name="dates"></a>
+                <h2 class="major"><span>Important Dates</span></h2>
+                <p>The competition schedule is aligned with the FG 2026 timeline:</p>
+                <ul>
+                    <li><b>Competition Period: </b>
+                        23rd December 2025 – 9th March 2026</li>
+                    <li><b>Training Set Release: </b>
+                        23rd December 2025</li>
+                    <li><b>Baseline Codes Release: </b>
+                        15th January 2026</li>
+                    <li><b>Test Set Release: </b>
+                        28th February 2026</li>
+                    <li><b>Competition End Date: </b>
+                        9th March 2026 <font color="red">(FIRM)</font></li>
+                    <li><b>Winner Paper Submissions and Code Verification: </b>
+                        23rd March 2026</li>
+                    <li><b>Notification of Acceptance: </b>
+                        2nd April 2026 (FG 2026 Round 2 Notification)</li>
+                    <li><b>Camera-Ready Deadline: </b>
+                        21st April 2026 (FG 2026 Camera-Ready)</li>
+                    <li><b>Challenge Date: </b>
+                        25th or 29th May 2026 (during FG 2026)</li>
+                </ul>
+            </section>
+ <section>
+                    <a name="tasks"></a>
+                    <h2 class="major"><span>Tasks and Application Scenarios</span></h2>
+
+                    <h3>Task 1: ME-VQA (Micro-Expression Visual Question Answering)</h3>
+                    <p>This task extends MEGC 2025. Participants receive short video clips containing a single ME and must answer natural-language questions such as:</p>
+                    <ul>
+                        <li>"What fine-grained emotion is expressed?"</li>
+                        <li>"What action units are shown on the face?"</li>
+                        <li>"Please provide an analysis and the reasoning process of the expression."</li>
+                        <li>...</li>
+                    </ul>
+ <p>  </p>
+                    <h3>Task 2: ME-LVQA (Micro-Expression Long-Video Question Answering)</h3>
+                    <p>This is a new FG 2026 task. Participants are given <em>long videos</em>. Each video may contain multiple or zero MEs. Participants must describe and explain all ME-related information contained in these long videos. Questions may include:</p>
+                    <ul>
+                        <li>"How many micro-expressions occur in this video?"</li>
+                        <li>"What emotions are expressed?"</li>
+                        <li>"Explain which facial actions occur in this video and why they indicate these emotions."</li>
+                        <li>...</li>
+                    </ul>
                 </section>
 
-                <!-- Unseen dataset Section -->
-                <!-- <section>
-                    <a name="unseenSet"></a>
-                    <header class="main">
-                        <h2 class="major"><span>Unseen dataset for both tasks</span></h2>
-                    </header>
+                <section>
+                    <a name="data"></a>
+                    <h2 class="major"><span>Data</span></h2>
+                    <p>The training data for the competition is recommended from existing ME datasets that are publicly available. These recommendations are split based on the tasks previously described. In addition, we include unseen test data that is used for the final results calculation for both tasks.</p>
 
+                    <h3>Task 1 - ME-VQA - Recommended Training Data</h3>
+                    <ul>
+                        <li><strong>Curated ME VQA dataset:</strong> Improved from the MEGC2019 composite dataset with clips from SAMM, CASME II, and SMIC by adding QA pairs.</li>
+
+                        <li><strong>SAMM</strong> (159 ME clips at 100 fps):
+                            <ul>
+                            <li> To download the dataset, please visit: <a
+                                    href="http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php">http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php</a>.
+                                Download and fill in the license agreement form, email to <a href="M.Yap@mmu.ac.uk">M.Yap@mmu.ac.uk</a>
+                                with email subject: SAMM videos.
+                            </li>
+                            <li>
+                                Reference: Dvison, A. K., Lansley, C., Costen, N., Tan, K., & Yap, M. H. (2016). SAMM: A spontaneous micro facial movement
+                                dataset. IEEE Transactions on Affective Computing, 9(1), 116-129.
+                            </li>
+                        </uL>
+                        </li>
+
+                        <li><strong>CASME II</strong> (247 ME clips at 200 fps):
+                            <ul>
+                            <li> To download the dataset, please visit: <a
+                                    href="http://casme.psych.ac.cn/casme/e3">http://casme.psych.ac.cn/casme/e3</a>. Download and fill in the license agreement form, submit throuth the website.
+                            >.
+                            </li>
+                            <li>
+                                Reference: Yan, W. J., Li, X., Wang, S. J., Zhao, G., Liu, Y. J., Chen, Y. H., & Fu, X. (2014). CASME II: An improved
+                                spontaneous micro-expression database and the baseline evaluation. PloS one, 9(1), e86041.
+                            </li>
+                        </ul>
+                        </li>
+
+                        <li><strong>CAS(ME)<sup>3</sup></strong> (1300 long videos at 30 fps):
+                            <ul>
+                            <li> To download the dataset, please visit: <a
+                                    href="http://casme.psych.ac.cn/casme/e4">http://casme.psych.ac.cn/casme/e4</a>.
+                                Download and fill in the license agreement form, submit throuth the website.
+                            </li>
+                            <li>
+                                Reference: Li, J., Dong, Z., Lu, S., Wang, S. J., Yan, W. J., Ma, Y., ... & Fu, X. (2022). CAS (ME)<sup>3</sup>: A third
+                                generation facial spontaneous micro-expression database with depth information and high ecological validity. IEEE Transactions
+                                on Pattern Analysis and Machine Intelligence, vol. 45, no. 3, pp. 2782-2800, doi: 10.1109/TPAMI.2022.3174895.
+                            </li>
+
+                        </ul>
+                        </li>
+
+                        <li><strong>SMIC-E-long</strong> (162 long videos at 100 fps):
+                             <ul>
+                            <li> To download the dataset, please visit: <a href="https://www.oulu.fi/cmvs/node/41319">https://www.oulu.fi/cmvs/node/41319</a>.
+                                Download and fill in the license agreement form (please indicate which version/subset
+                                you need), email to <a href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
+                            </li>
+                            <li>
+                                Reference: Tran, T. K., Vo, Q. N., Hong, X., Li, X., & Zhao, G. (2021). Micro-expression
+                                spotting: A new benchmark. Neurocomputing, 443, 356-368.
+                            </li>
+                        </ul>
+                        </li>
+
+                        <li><strong>4DME</strong> (1068 ME clips at 60 fps):
+                           <ul>
+                            <li> To download the dataset, please visit: <a
+                                    href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis">https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis</a>.
+                                Download and fill in the license agreement form , email to <a href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
+                            </li>
+                            <li>
+                                Reference: Li, X., Cheng, S., Li, Y., Behzad, M., Shen, J., Zafeiriou, S., ... & Zhao, G. (2022). 4DME: A spontaneous
+                                4D micro-expression dataset with multimodalities. IEEE Transactions on Affective Computing.
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+ <p>  </p>
+                    <h3>Task 2 - ME-LVQA - Recommended Training Data</h3>
+                    <ul>
+                        <li><strong>SAMM Long Videos</strong> (147 long videos at 200 fps):
+                            <uL>
+                            <li> To download the dataset, please visit: <a
+                                    href="http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php">http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php</a>.
+                                Download and fill in the license agreement form, email to <a href="M.Yap@mmu.ac.uk">M.Yap@mmu.ac.uk</a>
+                                with email subject: SAMM long videos.
+                            </li>
+                            <li>
+                                Reference: Yap, C. H., Kendrick, C., & Yap, M. H. (2020, November). SAMM long videos: A
+                                spontaneous facial micro-and macro-expressions dataset. In 2020 15th IEEE International
+                                Conference on Automatic Face and Gesture Recognition (FG 2020) (pp. 771-776). IEEE.
+                            </li>
+                        </uL>
+                        </li>
+                        <li><strong>CAS(ME)<sup>2</sup></strong> (97 long videos at 30 fps):
+                            <uL>
+                            <li> To download the dataset, please visit: <a
+                                    href="http://casme.psych.ac.cn/casme/e3">http://casme.psych.ac.cn/casme/e3</a>.  Download and fill in the license agreement form, submit throuth the website. .
+                            </li>
+                            <li>
+                                Reference: Qu, F., Wang, S. J., Yan, W. J., Li, H., Wu, S., & Fu, X. (2017). CAS (ME) $^
+                                2$: a database for spontaneous macro-expression and micro-expression spotting and
+                                recognition. IEEE Transactions on Affective Computing, 9(4), 424-436.
+                            </li>
+
+                        </uL>
+</li>
+                        <li><strong>CAS(ME)<sup>3</sup></strong> (1300 long videos at 30 fps):
+                           <uL>
+                            <li> To download the dataset, please visit: <a
+                                    href="http://casme.psych.ac.cn/casme/e4">http://casme.psych.ac.cn/casme/e4</a>.
+                                Download and fill in the license agreement form, submit throuth the website.
+                            </li>
+                            <li>
+                                Reference: Li, J., Dong, Z., Lu, S., Wang, S. J., Yan, W. J., Ma, Y., ... & Fu, X. (2022). CAS (ME)<sup>3</sup>: A third generation facial spontaneous micro-expression database with depth information and high ecological validity. IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 45, no. 3, pp. 2782-2800, doi: 10.1109/TPAMI.2022.3174895..
+                            </li>
+
+                        </uL> </li>
+                        <li><strong>SMIC-E-long</strong> (162 long videos at 100 fps):
+                            <uL>
+                            <li> To download the dataset, please visit: <a href="https://www.oulu.fi/cmvs/node/41319">https://www.oulu.fi/cmvs/node/41319</a>.
+                                Download and fill in the license agreement form (please indicate which version/subset
+                                you need), email to <a href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
+                            </li>
+                            <li>
+                                Reference: Tran, T. K., Vo, Q. N., Hong, X., Li, X., & Zhao, G. (2021). Micro-expression
+                                spotting: A new benchmark. Neurocomputing, 443, 356-368.
+                            </li>
+                        </uL></li>
+                        <li><strong>4DME</strong> (270 long videos at 60 fps):
+                           <uL>
+                            <li> To download the dataset, please visit: <a
+                                    href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis">https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis</a>.
+                                Download and fill in the license agreement form , email to <a href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
+                            </li>
+                            <li>
+                                Reference: Li, X., Cheng, S., Li, Y., Behzad, M., Shen, J., Zafeiriou, S., ... & Zhao, G. (2022). 4DME: A spontaneous 4D micro-expression dataset with multimodalities. IEEE Transactions on Affective Computing.
+                            </li>
+                        </ul></li>
+
+                        <li><strong>ME-LVQA:</strong> Will be prepared and released when we release the competition baseline.</li>
+                    </ul>
+ <p>  </p>
+                    <h3>Unseen Test Data</h3>
                     <p>
-                        This year, we will be using the unseen cross-cultural test sets to evaluate algorithms'
-                        performances in a fairer manner.
+                        The unseen test set for the VQA task contains 24 ME clips, including 7 clips from SAMM (SAMM Challenge dataset) and 17 clips from different videos in CAS(ME)<sup>3</sup>.
+                        <br>
+                        The unseen test set for the LVQA task will contain 30 long videos, including 10 long videos from SAMM and 20 clips cropped from different videos in CAS(ME)<sup>3</sup>.
                     </p>
-                    <h3>Unseen Dataset for STR</h3>
+                    <p>To obtain the test sets, participants will be required to download and fill in the license agreement forms for the SAMM Challenge dataset and CAS(ME)<sup>3</sup>, and upload them to the organisers through a link (to be provided when the test sets are released).</p>
+                </section>
+
+
+ <section>
+                    <a name="evaluation"></a>
+                    <h2 class="major"><span>Evaluation Metrics</span></h2>
+                    <p>To evaluate the performance of both our ME-VQA and ME-LVQA, we report metrics for both emotion classification and the overall language answer quality. The final ranking of the challenge participants will be based on the average (Avg) of all the overall metrics.</p>
+
+                    <h3>Emotion Classification</h3>
+                    <p>For both coarse- and fine-grained emotion classification, we use <strong>Unweighted F1 Score (UF1)</strong> and <strong>Unweighted Average Recall (UAR)</strong> to ensure balanced evaluation across classes.</p>
                     <ul>
-                        <li>The unseen testing set (<code><b>MEGC2025-testSet</b></code>) (same version as MEGC2023
-                            Unseen dataset)
-                            contains 30 long video, including 10 long videos from SAMM (SAMM Challenge dataset) and 20
-                            clips cropped
-                            from different videos in CAS(ME)<sup>3</sup> (unreleased before). The frame rate for SAMM
-                            Challenge dataset
-                            is 200fps and the frame rate for CAS(ME)<sup>3</sup> is 30 fps. The participants should test
-                            on this unseen dataset.
-                        <li>To obtain the <code><b>MEGC2025-testSet</b></code>, download and fill in the <a
-                                href="files/SAMM_ReleaseAgreementV2.pdf">license agreement form of SAMM Challenge
-                                dataset</a> and
-                            the <a href="files/CAS3_clip_ReleaseAgreement.pdf">license agreement form of
-                                CAS(ME)<sup>3</sup>_clip</a>,
-                            upload the file through this
-                            link: <a href="https://www.wjx.top/vm/wxCeVHP.aspx#">https://www.wjx.top/vm/wxCeVHP.aspx#
-                            </a>.
-
-                            <ul>
-                                <li> For the request from a bank or company, the participants are required to ask their
-                                    director or
-                                    CEO to sign the form.
-                                </li>
-                                <li> Reference:
-                                    <ol>
-                                        <li> Li, J., Dong, Z., Lu, S., Wang, S.J., Yan, W.J., Ma, Y., Liu, Y., Huang, C.
-                                            and
-                                            Fu, X. (2023). CAS(ME)<sup>3</sup>: A Third Generation Facial Spontaneous
-                                            Micro-Expression Database with Depth Information and High Ecological
-                                            Validity.
-                                            <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i>, vol.
-                                            45, no. 3, pp. 2782-2800, 1 March 2023, doi: 10.1109/TPAMI.2022.3174895.
-                                        </li>
-                                        <li> Davison, A. K., Lansley, C., Costen, N., Tan, K., & Yap, M. H. (2016).
-                                            SAMM: A
-                                            spontaneous micro-facial movement dataset. <i>IEEE Transactions on Affective
-                                                Computing</i>, 9(1),
-                                            116-129.
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ul>
-                        </li>
+                        <li><strong>Coarse classes:</strong> positive, negative, surprise.</li>
+                        <li><strong>Fine-grained classes:</strong> happiness, surprise, fear, disgust, anger, sadness.</li>
                     </ul>
-                    <h3>Unseen Dataset for VQA</h3>
-                    <ul>
-                        <li>The unseen testing set for VQA contains 24 ME clips, including 7 clips from SAMM (SAMM
-                            Challenge dataset) and 17 clips
-                            from different videos in CAS(ME)<sup>3</sup> (unreleased before). The frame rate for SAMM
-                            Challenge dataset
-                            is 200fps and the frame rate for CAS(ME)<sup>3</sup> is 30 fps. The participants should test
-                            on this unseen dataset.
-                        <li>To obtain the <code><b>MEGC2025-testSet-ME-VQA</b></code>, download and fill in the <a
-                                href="files/SAMM_ReleaseAgreementV2.pdf">license agreement form of SAMM Challenge
-                                dataset</a> and
-                            the <a href="files/CAS3_clip_ReleaseAgreement.pdf">license agreement form of
-                                CAS(ME)<sup>3</sup>_clip</a>,
-                            upload the file through this
-                            link: <a href="https://www.wjx.top/vm/wxCeVHP.aspx#">https://www.wjx.top/vm/wxCeVHP.aspx#
-                            </a>.
+ <p>  </p>
+                    <h3>Generated Text Quality</h3>
+                    <p>For all VQA answers, we report <strong>BLEU</strong> and <strong>ROUGE-1</strong> to assess the quality of generated text.</p>
 
-                            <ul>
-                                <li> For the request from a bank or company, the participants are required to ask their
-                                    director or
-                                    CEO to sign the form.
-                                </li>
-                                <li> Reference:
-                                    <ol>
-                                        <li> Li, J., Dong, Z., Lu, S., Wang, S.J., Yan, W.J., Ma, Y., Liu, Y., Huang, C.
-                                            and
-                                            Fu, X. (2023). CAS(ME)<sup>3</sup>: A Third Generation Facial Spontaneous
-                                            Micro-Expression Database with Depth Information and High Ecological
-                                            Validity.
-                                            <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i>, vol.
-                                            45, no. 3, pp. 2782-2800, 1 March 2023, doi: 10.1109/TPAMI.2022.3174895.
-                                        </li>
-                                        <li> Davison, A. K., Lansley, C., Costen, N., Tan, K., & Yap, M. H. (2016).
-                                            SAMM: A
-                                            spontaneous micro-facial movement dataset. <i>IEEE Transactions on Affective
-                                                Computing</i>, 9(1),
-                                            116-129.
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section> -->
-
-                <!-- Track 1 STR Section -->
-                <!-- <section>
-                    <a name="STR"></a>
-                    <header class="main">
-                        <h2 class="major"><span>Spot-then-Recognize (STR) Task</span></h2>
-                    </header>
-
-                    <p>Since the rapid advancement of ME research started about a decade ago, most works have been
-                        mainly focused on
-                        two separate tasks: spotting and recognition. The task of only recognizing the ME class can
-                        be unrealistic in
-                        real-world settings since it assumes that the ME sequence has already been identified - an
-                        ill-posed problem in
-                        the case of a continuous-running video. On the other hand, the spotting task is unrealistic
-                        in its applicability
-                        since it cannot interpret the actual emotional state of the person observed.
+                    <p><strong>BLEU</strong> evaluates n-gram precision between predicted and reference answers as:</p>
+                    <p>
+                        $$ \mathrm{BLEU} = \exp \left( \min\left(1 - \frac{r}{c}, 0\right) + \sum_{n=1}^{N} w_n \log p_n \right) $$
                     </p>
 
-                    <p>A more realistic setting, also known as "spot-then-recognize", performs spotting followed by
-                        recognition in a
-                        sequential manner. Only samples that have been correctly spotted in the spotting step (i.e.
-                        true positives)
-                        will be passed on to the recognition step to be classified for its emotion class.
-                        The task will use the unseen dataset, and evaluated using <a href="#STR-eval">selected
-                            metrics</a>.</p>
-
-                    Reference:
-                    <ul>
-                        <li>Liong, G-B., See, J. and C.S. Chan (2023). Spot-then-recognize: A micro-expression
-                            analysis network for seamless evaluation
-                            of long videos.
-                            <i>Signal Processing: Image Communication</i>, vol. 110, pp. 116875, January 2023, doi:
-                            <a href="https://doi.org/10.1016/j.image.2022.116875">10.1016/j.image.2022.116875</a>
-                        </li>
-                    </ul>
-
-                    <p></p>
-                    <a name="STR-eval"></a>
-                    <h3>Evaluation Protocol</h3>
-                    <ul>
-                        <li>Submissions will use the Codabench Competition Leaderboard.</li>
-                        <li>Participants should upload the predicted results for both the unseen CAS(ME)<sup>3</sup>
-                            and SAMM datasets to the
-                            Codabench Leaderboard where specific evaluation metrics will be calculated.</li>
-                        <li><b>Evaluation metrics</b> (for SAMM, CAS):
-                            <ul>
-                                <li>F1-score, for Spotting and Analysis steps. <em>(Higher the better)</em></li>
-                                <li>Spot-then-Recognize Score (STRS), which is the product of the Spotting and
-                                    Analysis F1-scores. <em>(Higher the better)</em></li>
-                            </ul>
-                        </li>
-                        <li>Submissions to the Leaderboard must be made in the form of a <b>zip</b> file
-                            containining the predicted csv files with the following filenames:<br />
-                            <ul>
-                                <li><code>cas_pred.csv</code> (for the CAS(ME)<sup>3</sup> samples)</li>
-                                <li><code>samm_pred.csv</code> (for the SAMM samples)</li>
-                            </ul>
-                        </li>
-                        <li>An example submission is provided here: <a
-                                href="files/example_submission_STR.zip">example_submission_STR</a>.</li>
-                        <li>The evaluation script is available at <a
-                                href="https://github.com/genbing99/STRS-Metric">https://github.com/genbing99/STRS-Metric</a>.
-                        </li>
-                        <li>The <b>baseline</b> method can be found in the following paper (please cite):
-                            <br />
-                            Liong, G-B., See, J. and C.S. Chan (2023). Spot-then-recognize: A micro-expression
-                            analysis network for seamless evaluation
-                            of long videos. Signal Processing: Image Communication, Vol. 110, pp. 116875.
-                        </li>
-                    </ul>
-
-                    <h3>Recommended Training Databases</h3> <a name="training"></a>
-                    <ul>
-                        <li><b>SAMM Long Videos with 147 long videos at 200 fps (average duration: 35.5s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php">http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php</a>.
-                                    Download and fill in the license agreement form, email to <a
-                                        href="M.Yap@mmu.ac.uk">M.Yap@mmu.ac.uk</a>
-                                    with email subject: SAMM long videos.
-                                </li>
-                                <li>
-                                    Reference: Yap, C. H., Kendrick, C., & Yap, M. H. (2020, November). SAMM long
-                                    videos: A
-                                    spontaneous facial micro-and macro-expressions dataset. In 2020 15th IEEE
-                                    International
-                                    Conference on Automatic Face and Gesture Recognition (FG 2020) (pp. 771-776).
-                                    IEEE.
-                                </li>
-                            </ul>
-
-                        <li><b> CAS(ME)<sup>2</sup> with 97 long videos at 30 fps (average duration: 148s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="http://casme.psych.ac.cn/casme/e3">http://casme.psych.ac.cn/casme/e3</a>.
-                                    Download and fill in the license agreement form, submit throuth the website.
-                                    >.
-                                </li>
-                                <li>
-                                    Reference: Qu, F., Wang, S. J., Yan, W. J., Li, H., Wu, S., & Fu, X. (2017). CAS
-                                    (ME) $^
-                                    2$: a database for spontaneous macro-expression and micro-expression spotting
-                                    and
-                                    recognition. IEEE Transactions on Affective Computing, 9(4), 424-436.
-                                </li>
-                            </ul>
-
-                        <li><b>SMIC-E-long with 162 long videos at 100 fps (average duration: 22s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="https://www.oulu.fi/cmvs/node/41319">https://www.oulu.fi/cmvs/node/41319</a>.
-                                    Download and fill in the license agreement form (please indicate which
-                                    version/subset
-                                    you need), email to <a href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
-                                </li>
-                                <li>
-                                    Reference: Tran, T. K., Vo, Q. N., Hong, X., Li, X., & Zhao, G. (2021).
-                                    Micro-expression
-                                    spotting: A new benchmark. Neurocomputing, 443, 356-368.
-                                </li>
-                            </ul>
-                        <li><b> CAS(ME)<sup>3</sup> with 1300 long videos at 30 fps (average duration: 98s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="http://casme.psych.ac.cn/casme/e4">http://casme.psych.ac.cn/casme/e4</a>.
-                                    Download and fill in the license agreement form, submit throuth the website.
-                                </li>
-                                <li>
-                                    Reference: Li, J., Dong, Z., Lu, S., Wang, S. J., Yan, W. J., Ma, Y., ... & Fu,
-                                    X. (2022). CAS (ME)<sup>3</sup>: A third generation facial spontaneous
-                                    micro-expression database with depth information and high ecological validity.
-                                    IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 45, no. 3,
-                                    pp. 2782-2800, doi: 10.1109/TPAMI.2022.3174895..
-                                </li>
-
-                            </ul>
-                        <li><b> 4DME with 270 long videos at 60 fps (average duration: 2.5s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis">https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis</a>.
-                                    Download and fill in the license agreement form , email to <a
-                                        href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
-                                </li>
-                                <li>
-                                    Reference: Li, X., Cheng, S., Li, Y., Behzad, M., Shen, J., Zafeiriou, S., ... &
-                                    Zhao, G. (2022). 4DME: A spontaneous 4D micro-expression dataset with
-                                    multimodalities. IEEE Transactions on Affective Computing.
-                                </li>
-                            </ul>
-                    </ul>
-                    <p></p>
-
-                </section> -->
-
-                <!-- Track 2 VQA Section -->
-                <!-- <section>
-                    <a name="VQA"></a>
-                    <header class="main">
-                        <h2 class="major"><span>Visual Question Answering (VQA) Task</span></h2>
-                    </header>
-
-                    <p>For the first time in MEGC 2025, this is a new task that introduces a visual question
-                        answering challenge for ME analysis, to leverage on advanced vision-language models (VLMs)
-                        and multimodal large language models (LLMs). Instead of relying on structured labels, ME
-                        annotations, such as emotion classes, action units, are converted into question-answer (QA)
-                        pairs. Given an image or video sequence as input with natural language prompts, models must
-                        generate answers that describe the ME, its attributes, etc. These questions can cover a wide
-                        range of attributes, from binary classification such as <i>"Is the action unit lip corner
-                            depressor shown on the face?"</i> to multiclass classification like <i>"What is the
-                            expression class?"</i>, and to more complex inquiries like <i>"What are the action units
-                            present, and based on them, what is the expression class?"</i></p>
-
-                    <p>Participants may train the model based on the <a
-                            href="https://megc2025.github.io/files/me_vqa_samm_casme2_smic.jsonl">curated ME VQA
-                            datasets</a> or explore zero-shot reasoning, in-context learning, multi-agent systems,
-                        etc. Evaluation will assess the UF1 and UAR of the emotion classes, and NLP metrics BLEU and
-                        ROUGE of overall responses. In addition to automatic metrics, human evaluation may be used
-                        to gauge the reasoning quality of the models. This task provides a new multimodal
-                        perspective on ME analysis, encouraging interpretable and context-aware ME analysis through
-                        natural language interaction.
-
-                        The curated ME VQA dataset is improved from the MEGC2019 composite dataset with clips from
-                        CASME II, SAMM, and SMIC by adding QA pairs. The participant can use it as a starting point,
-                        while they can also include other training samples and generate their own QA pairs.
+                    <p><strong>ROUGE-1</strong> score is defined as the recall of unigram overlaps between the candidate answer <em>C</em> and the reference answer <em>R</em>:</p>
+                    <p>
+                        $$ \mathrm{ROUGE\text{-}1} = \frac{\sum_{w \in V} \min\big(\mathrm{N}_p(w),\ \mathrm{N}_r(w)\big)}{\sum_{w \in V} \mathrm{N}_r(w)} $$
                     </p>
 
-                    <p>We produce the baseline results in our challenge paper: X, Fan, J. Li, J. See, M. H. Yap,
-                        W.-H. Cheng, X. Li, X. Hong, S.-J. Wang and A. K. Davison. <a
-                            href="https://arxiv.org/pdf/2506.15298">MEGC2025: Micro-Expression Grand Challenge on
-                            Spot Then Recognize and Visual Question Answering</a>. arXiv preprint arXiv:2506.15298,
-                        2025. </p>
+                </section>
 
-                    <a name="VQA-eval"></a>
-                    <h3>Evaluation Protocol</h3>
-                    <ul>
-                        <li>Submissions will use the Codabench Competition Leaderboard.</li>
-                        <li>Participants should upload the predicted results for both unseen CAS(ME)<sup>3</sup> and
-                            SAMM datasets to the
-                            Codabench Leaderboard where specific evaluation metrics will be calculated.</li>
-                        <li><b>Evaluation metrics</b> (for SAMM, CAS):
-                            <ul>
-                                <li>UF1 and UAR for both coarse and fine-grained emotion class. <em>(Higher the
-                                        better)</em></li>
-                                <li>BLEU and ROUGH-1 for all the answers. <em>(Higher the better)</em></li>
-                            </ul>
-                        </li>
-                        <li>Participants can fill in the test VQA to-answer josonl files and renamed them as
-                            xxx_pred.jsonl. These files are available at <a
-                                href="https://drive.google.com/drive/folders/1_t1cNv2DMFr43wY5WTng8U1hEICgbJIC?usp=sharing">Google
-                                Drive</a> and <a href="https://pan.baidu.com/s/1pKuFTcDgBGVKDzr0wAqNYA?pwd=p3uj">Baidu
-                                Drive</a>.
-                            <br />
-                            <ul>
-                                <li><code>me_vqa_casme3_test_to_answer.jsonl</code></li>
-                                <li><code>me_vqa_samm_test_to_answer.jsonl</code></li>
-                            </ul>
-                        </li>
-                        <li>Submissions to the Leaderboard must be made in the form of a <b>zip</b> file
-                            containining the predicted
-                            jsonl files with the following filenames:<br />
-                            <ul>
-                                <li><code>me_vqa_casme3_test_pred.jsonl</code> (for the unseen CAS(ME)<sup>3</sup>
-                                    ME clips)</li>
-                                <li><code>me_vqa_samm_test_pred.jsonl</code> (for the unseen SAMM ME clips)</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <h3>Recommended Training Databases</h3> <a name="training"></a>
-                    <ul>
-                        <li><b>Curated ME VQA dataset</b>
-                            <ul>
-                                <li> Please download the annotation from here <a
-                                        href="https://megc2025.github.io/files/me_vqa_samm_casme2_smic.jsonl">Curated
-                                        ME
-                                        VQA dataset</a>.
-                                </li>
-                                <li> The Curated ME VQA dataset is improved from the MEGC2019 composite dataset with
-                                    clips from SAMM, CASME II, and
-                                    SMIC by adding QA pairs. Therefore, to access the ME clips, please follow the
-                                    dataset request link below.
-                                </li>
-                            </ul>
-                        <li><b>SAMM with 159 ME clips at 100 fps.</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php">http://www2.docm.mmu.ac.uk/STAFF/M.Yap/dataset.php</a>.
-                                    Download and fill in the license agreement form, email to <a
-                                        href="M.Yap@mmu.ac.uk">M.Yap@mmu.ac.uk</a>
-                                    with email subject: SAMM videos.
-                                </li>
-                                <li>
-                                    Reference: Dvison, A. K., Lansley, C., Costen, N., Tan, K., & Yap, M. H. (2016).
-                                    SAMM: A spontaneous micro facial movement
-                                    dataset. IEEE Transactions on Affective Computing, 9(1), 116-129.
-                                </li>
-                            </ul>
-
-                        <li><b> CASME II with 247 ME clips at 200 fps.</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="http://casme.psych.ac.cn/casme/e3">http://casme.psych.ac.cn/casme/e3</a>.
-                                    Download and fill in the license agreement form, submit throuth the website.
-                                    >.
-                                </li>
-                                <li>
-                                    Reference: Yan, W. J., Li, X., Wang, S. J., Zhao, G., Liu, Y. J., Chen, Y. H., &
-                                    Fu, X. (2014). CASME II: An improved
-                                    spontaneous micro-expression database and the baseline evaluation. PloS one,
-                                    9(1), e86041.
-                                </li>
-                            </ul>
-
-                        <li><b>SMIC-E-long with 162 ME clips at 100 fps (average duration: 22s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="https://www.oulu.fi/cmvs/node/41319">https://www.oulu.fi/cmvs/node/41319</a>.
-                                    Download and fill in the license agreement form (please indicate which
-                                    version/subset
-                                    you need), email to <a href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
-                                </li>
-                                <li>
-                                    Reference: Tran, T. K., Vo, Q. N., Hong, X., Li, X., & Zhao, G. (2021).
-                                    Micro-expression
-                                    spotting: A new benchmark. Neurocomputing, 443, 356-368.
-                                </li>
-                            </ul>
-                        <li><b> CAS(ME)<sup>3</sup> with 1109 ME clips at 30 fps (average duration: 98s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="http://casme.psych.ac.cn/casme/e4">http://casme.psych.ac.cn/casme/e4</a>.
-                                    Download and fill in the license agreement form, submit throuth the website.
-                                </li>
-                                <li>
-                                    Reference: Li, J., Dong, Z., Lu, S., Wang, S. J., Yan, W. J., Ma, Y., ... & Fu,
-                                    X. (2022). CAS (ME)<sup>3</sup>: A third
-                                    generation facial spontaneous micro-expression database with depth information
-                                    and high ecological validity. IEEE Transactions
-                                    on Pattern Analysis and Machine Intelligence, vol. 45, no. 3, pp. 2782-2800,
-                                    doi: 10.1109/TPAMI.2022.3174895.
-                                </li>
-
-                            </ul>
-                        <li><b> 4DME with 1068 ME clips at 60 fps (average duration: 2.5s).</b>
-                            <ul>
-                                <li> To download the dataset, please visit: <a
-                                        href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis">https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis</a>.
-                                    Download and fill in the license agreement form , email to <a
-                                        href="Xiaobai.Li@oulu.fi">Xiaobai.Li@oulu.fi</a>.
-                                </li>
-                                <li>
-                                    Reference: Li, X., Cheng, S., Li, Y., Behzad, M., Shen, J., Zafeiriou, S., ... &
-                                    Zhao, G. (2022). 4DME: A spontaneous
-                                    4D micro-expression dataset with multimodalities. IEEE Transactions on Affective
-                                    Computing.
-                                </li>
-                            </ul>
-                    </ul>
-
-                </section> -->
-
+                <section>
+                <a name="baselines"></a>
+                <h2 class="major"><span>Baselines</span></h2>
+                <p>
+                    We will release a baseline paper describing the core methodology and evaluation strategy, and example submissions to clarify output formats. To support participants and ensure fair comparison, we will provide a comprehensive suite of baseline methods, reference implementations, and evaluation tools for both ME-VQA and ME-LVQA.
+                </p>
+                <ul>
+                    <li>
+                        <b>For ME-VQA:</b> We will release the baseline models used in MEGC 2025. These baselines demonstrate how short video clips can be paired with natural-language questions and offer strong reference points for zero-shot and fine-tuned performance.
+                    </li>
+                    <li>
+                        <b>For ME-LVQA:</b> We will introduce a new baseline pipeline for long video question answering. This pipeline provides participants with an end-to-end reference workflow, illustrating how natural-language reasoning can be integrated.
+                    </li>
+                </ul>
+                <p>
+                    Finally, the competition will be hosted on the <b>Codabench</b> platform, which provides a transparent and secure leaderboard, reproducible evaluations, and strict submission management. Codabench ensures fairness by preventing label leakage, enforcing submission limits, and enabling consistent scoring across all participants.
+                </p>
+            </section>
 
                 <!-- Submission Section -->
-                <section>
+                 <section>
                     <a name="submission"></a>
                     <h2 class="major"><span>Submission</span></h2>
-                    <p>
-                        Submission information coming soon.
-                    </p>
+
+                    <h3>Competition Submission</h3>
+                    <p>The MEGC 2026 competition will use a dedicated Codabench-based competition website. </p>
+                    <ul>
+                       <li><b>Challenge submission platform for ME-VQA task: TBC</b></li>
+                    <li><b>Challenge submission platform for ME-LVQA task: TBC</b></li>
+                        <li><strong>Evaluation result file (.json)</strong> : This file must include, for every tested video, the
+dataset name, video ID, and the corresponding predicted outputs. The Codabench
+platform will parse and evaluate these results, displaying metric-specific scores and
+leaderboard rankings in real time. A daily submission limit will be imposed to prevent
+leaderboard overfitting.</li>
+                    </ul>
+
+                    <h3>Rules</h3>
+                    <ul>
+                        <li><strong>Use of external data:</strong> Permitted if clearly declared.</li>
+                        <li><strong>Use of pretrained models:</strong> Permitted (e.g., VLMs, LLMs) if publicly available and disclosed.</li>
+                        <li><strong>Prohibition of test-set leakage:</strong> Teams must not attempt to access or reverse engineer test labels.</li>
+                        <li><strong>Submission limits:</strong> Maximum of 3 submissions per day to Codabench.</li>
+                        <li><strong>Mandatory technical report:</strong> Required for eligibility.</li>
+                    </ul>
+
+                    <h3>Cheating Prevention</h3>
+                    <p>Hidden test sets, rate-limited submissions, metadata monitoring, cross-checks for label leakage, and manual verification for winning teams will be employed.</p>
+
+                    <h3>Paper Submission</h3>
+                    <ul>
+                    <li>Paper submissions will follow the FG 2026 formatting (long paper format, 8 pages + refs) and use the CMT system. Accepted papers will be included in the FG 2026 challenge proceedings.</li>
+                    <li>For all other required files besides the paper, please submit in a
+                                single zip file and upload to the submission system as supplementary material. It is compulsory to include:
+                                <ul>
+                                    <li>GitHub repository URL containing codes of your implemented method, and all other
+                                        relevant files such as feature/parameter data.</li>
+                                    <li>CSV files reporting the results.</li>
+                                </ul>
+                                The organizers have the right to reject any submissions that: 1) are not accompanied by a paper,
+                                2) did not share the code repository and reported results for verification purposes.
+                            </li>
+                     <li><strong>Submission Link:</strong>TBC</li>
+                         </ul>
                 </section>
 
-                <!-- FAQ Section-->
-                <!-- <section>
-                        <h2 class="major"><span>Frequently Asked Questions</span></h2>
-                        <a name="questions"></a>
-                        <ol>
-                            <li>Q: How to deal with the spotted intervals with overlap? <br />
-                                A: We consider that each ground-truth interval corresponds to at most one single spotted
-                                interval. If your algorithm detects multiple with overlap, you should merge them into an
-                                optimal
-                                interval. The fusion method is also part of your algorithm, and the final result
-                                evaluation only
-                                cares about the optimal interval obtained.
-                            </li>
+                <section>
+                    <p>For inquiries, please get in touch via the email addresses listed below.</p>
+                </section>
 
-                            <li>Q: For the STR challenge, how many classes are used in the classification part? <br />
-                                A: You are required to only classify emotions into three classes:
-                                <code>"negative"</code>, <code>"positive"</code>, <code>"surprise"</code>.
-                                Only correctly spotted micro-expressions are passed on to the classification part, also
-                                knowns as Analysis (on the Leaderboard).
-                                The <code>"other"</code> class is <b>not included</b> in the evaluation calculation for
-                                the Analysis part. However, all occurrences, including those labelled
-                                with the <code>"other"</code> class are considered in the Spotting part as they are
-                                micro-expressions.
-                            </li>
-                        </ol>
 
-                        <br />
-                    </section> -->
+
             </div>
         </section>
         <footer id="footer">

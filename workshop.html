@@ -29,9 +29,9 @@
         <nav id="nav">
             <ul>
                 <!-------------BEGIN SIDE MENU--------------->
-                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <!-- Workshop MENU-->
-                <li><a href="workshop.html">FME Workshop</a>
+                <li class="current"><a href="workshop.html">FME Workshop</a>
                     <ul>
                         <li><a href="workshop.html#agenda">Agenda</a></li>
                         <li><a href="workshop.html#submission">Submission</a></li>
@@ -58,30 +58,131 @@
                 <!-- Content -->
                 <!-- Pre-amble Section -->
                 <section>
-                    <header class="main">
-                        <h2 align="center">Facial Micro-Expression (FME) Workshop 2026</h2>
-                        <h2 align="center">Pushing Boundaries in Temporal and Spatial Subtle Movement Analysis</h2>
-                        <p align="center">Call for papers coming soon.</p>
-                    </header>
-                </section>
+    <header class="main">
+        <h2 align="center">Facial Micro-Expression (FME) Workshop 2026</h2>
+        <h2 align="center">Pushing Boundaries in Temporal and Spatial Subtle Movement Analysis</h2>
+        <p align="center">This workshop focuses on advancing the study of facial micro-expressions (FME) in computational analysis, spanning across interdisciplinary fields and incorporating the latest techniques in machine learning, multimodal analysis, and more.</p>
+    </header>
+</section>
 
-                <!-- Workshop Agenda Section-->
-                <section>
-                    <header class="main">
-                        <h2 class="major"><span>Agenda</span></h2>
-                        <a name="agenda"></a>
-                    </header>
+<!-- Workshop Focus / Call for Papers Section (replacing the old Agenda section) -->
+<section>
+  <header class="main">
+    <h2 class="major"><span> Intro</span></h2>
+    <!-- Keep the anchor name="agenda" to preserve existing nav links -->
+    <a name="agenda"></a>
+  </header>
 
-                    <p>Agenda coming soon.</p>
+  <p>
+    Facial micro-expressions (MEs) are brief, involuntary facial movements that occur when individuals experience emotions
+    they attempt to suppress, often in high-stakes scenarios. With durations typically below 500 ms, MEs provide unique
+    cues for hidden or subtle affect, yet remain difficult to spot and recognize computationally due to scarce labeled
+    data, annotation ambiguity, and the need for fine-grained spatiotemporal modeling.
+  </p>
 
-                </section>
+  <p>
+    This workshop aims to bring together researchers across computer vision, multimedia, and affective computing to
+    advance temporal and spatial subtle movement analysis. We particularly encourage work that leverages modern learning
+    paradigms (e.g., self-supervised learning, multimodal learning, and foundation models) while addressing challenges in
+    data, evaluation, and robustness.
+  </p>
 
-                <!-- Submission Section-->
-                <section>
-                    <h2 class="major"><span>Submission</span></h2>
-                    <a name="submission"></a>
-                    <p> Submission information coming soon.</p>
-                </section>
+  <h3>Focus</h3>
+  <ul>
+    <li><strong>Micro-expression spotting & recognition</strong> under limited supervision and real-world variability</li>
+    <li><strong>Fine-grained spatiotemporal modeling</strong> of subtle facial motion in videos</li>
+    <li><strong>Learning with scarce / noisy / inconsistent labels</strong> and annotation uncertainty</li>
+    <li><strong>Multimodal ME analysis</strong> beyond RGB (e.g., NIR/IR, depth, audio, physiological signals)</li>
+    <li><strong>Foundation models for subtle affect</strong> (VLMs / multimodal LLMs), including prompt-based and zero-shot setups</li>
+    <li><strong>Datasets, benchmarks, and protocols</strong> that improve reproducibility and fair comparison</li>
+  </ul>
+</section>
+
+    <section>
+  <header class="main">
+    <h2 class="major"><span>Call for Papers</span></h2>
+    <!-- Keep the anchor name="agenda" to preserve existing nav links -->
+    <a name="agenda"></a>
+  </header>
+  <h3>Topics of Interest:</h3>
+  <p>
+    We invite original, unpublished submissions (including position papers and challenge/benchmark papers) on topics
+    including but not limited to:
+  </p>
+
+  <h4>- Micro-Expression Analysis</h4>
+  <ul>
+    <li>Micro-expression spotting, temporal localization, and onset/offset detection</li>
+    <li>Micro-expression recognition, intensity estimation, and fine-grained affect modeling</li>
+    <li>Motion representation learning (optical flow, strain, subtle dynamics, action units)</li>
+    <li>ME vs. macro-expression / subtle expression discrimination</li>
+    <li>Cross-dataset, cross-subject, and cross-cultural generalization</li>
+    <li>Robustness to head pose, illumination, occlusion, compression, and low-quality video</li>
+  </ul>
+
+  <h4>- Learning with Limited Supervision</h4>
+  <ul>
+    <li>Self-supervised / unsupervised learning for ME spotting and recognition</li>
+    <li>Weakly supervised, semi-supervised, and active learning for ME analysis</li>
+    <li>Few-shot, zero-shot, open-set, and continual learning for subtle expressions</li>
+    <li>Learning from noisy labels, annotator disagreement, and label uncertainty modeling</li>
+    <li>Domain adaptation, test-time adaptation, and personalization</li>
+  </ul>
+
+  <h4>- Multimodal, Multi-View, and 3D</h4>
+  <ul>
+    <li>Multimodal fusion: RGB + NIR/IR/thermal/depth/event cameras</li>
+    <li>Physiological signals for affect inference (e.g., ECG/PPG heart rate, EEG, EMG)</li>
+    <li>Multi-view facial analysis and 3D/4D face modeling for subtle motion</li>
+    <li>Temporal synchronization and alignment across modalities</li>
+    <li>Multimodal benchmarks and evaluation protocols</li>
+  </ul>
+
+  <h4>- Foundation Models and Vision-Language Approaches</h4>
+  <ul>
+    <li>Vision-language models (VLMs) for expression understanding and ME reasoning</li>
+    <li>Multimodal LLMs for ME analysis with natural-language interaction</li>
+    <li>Prompt engineering, instruction tuning, and structured prompting for subtle cues</li>
+    <li>Fine-tuning / adapter-based tuning on facial expression corpora for ME sensitivity</li>
+    <li>Zero-shot / in-context learning for ME spotting and recognition</li>
+    <li>Model interpretability: ensuring genuine ME understanding vs. superficial correlations</li>
+  </ul>
+
+  <h4>- Data, Benchmarks, and Reproducibility</h4>
+  <ul>
+    <li>New spontaneous ME datasets, annotations, and collection protocols</li>
+    <li>Benchmark challenges: metrics, splits, standardized evaluation, reproducible baselines</li>
+    <li>Synthetic data, simulation, augmentation, and data-centric ME learning</li>
+    <li>Bias, fairness, and demographic robustness analysis</li>
+    <li>Uncertainty-aware evaluation and confidence calibration</li>
+  </ul>
+
+  <h4>- Applications and Responsible Use</h4>
+  <ul>
+    <li>Affective computing, social signal processing, and human-centered AI</li>
+    <li>Mental state and wellbeing analysis (with appropriate ethical safeguards)</li>
+    <li>Human–computer interaction and assistive technologies</li>
+    <li>Ethical considerations, privacy, and responsible deployment of ME technologies</li>
+  </ul>
+
+  <p>
+    <em>Note:</em> The detailed workshop agenda will be announced after paper decisions and final scheduling.
+  </p>
+</section>
+
+<section>
+    <h2 class="major"><span>Submission</span></h2>
+    <a name="submission"></a>
+    <p>We invite submissions of papers related to facial micro-expression analysis, with a focus on computational methods, multimodal integration, and challenges with large models. The important submission deadlines are as follows:</p>
+    <ul>
+        <li><strong>Paper Submission Open:</strong> February 16, 2026</li>
+        <li><strong>Paper Deadline:</strong> March 16, 2026</li>
+        <li><strong>Paper Notification:</strong> April 13, 2026</li>
+        <li><strong>Camera Ready:</strong> April 21, 2026 (aligned with the FG conference)</li>
+        <li><strong>Workshop Date:</strong> May 25 or 29, 2026 (depending on the schedule)</li>
+    </ul>
+</section>
+
 
             </div>
         </section>
