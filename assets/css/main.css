@@ -140,9 +140,14 @@ input, select, textarea {
 				padding: 0 1.25em 0 1.25em;
 			}
 
-	h3, h4 {
+	h3{
 		font-size: 1.25em;
 	}
+
+	h4 {
+		font-size: 1.15em;
+	}
+
 
 	a {
 		color: #006376;
@@ -193,6 +198,15 @@ input, select, textarea {
 	p, ul, ol, dl, table {
 		margin-bottom: 3em;
 	}
+
+	h3,
+h4 {
+  margin: 1.5em 0 0.5em 0; /* 上方留白多一点，下方少一点 */
+}
+
+p {
+  margin-bottom: 1em;
+}
 
 /* Section/Article */
 
@@ -2409,12 +2423,12 @@ input, select, textarea {
 			}
 
 			#nav li.active a, #nav li.active span {
-				background: #C1CAC5;
+				background: #043F56;
 				color: #fff;
 			}
 
 			#nav li.current a {
-				background: #D079C0FF;
+				background:#043F56;
 				color: #fff;
 			}
 
@@ -2542,7 +2556,7 @@ input, select, textarea {
 
 	#main {
 		background: #fff;
-		border-top: solid 5px #d079c0;
+		border-top: solid 5px #043F56;
 		border-bottom: solid 5px #c1cac5;
 		border-top-width: 35px;
 		border-bottom-width: 10px;
